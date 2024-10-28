@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <div class="h1">
+            <h1 class="heading">CALCULATE YOUR BMI</h1>
+        </div>
+        <div class="box">
+            <div>
+                <p>
+                    Enter your height in m
+                </p>
+                
+            </div>
+            <div>
+                <input type="number" id="height">
+            </div>
+            <div>
+                <p>
+                    Enter your Weight in kg
+                </p>
+            </div>
+            <div>
+                <input type="number" id="weight">
+            </div>
+            <div>
+                <p>
+                    <button onclick="calculateBMI()">click here to get bmi</button>
+                    <script>
+                        function calculateBMI() {
+                            const height = (document.getElementById('height').value);
+                            const weight = (document.getElementById('weight').value);
+                            const bmi = weight / (height * height);
+                            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                                 document.getElementById('result').innerHTML = 'Please enter valid numbers for height and weight.';
+                                }
+                                else{
+                                 document.getElementById('result').innerHTML= 'Your BMI is: ' + bmi.toFixed(2);
+                                }
+                        }
+                    </script>
+                </p>
+                
+            </div>
+            <div>
+                <h1 id="result"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
